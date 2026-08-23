@@ -1,4 +1,4 @@
-FOSSEE OpenModelica Desktop Application
+#FOSSEE OpenModelica Desktop Application
 
 Overview
 
