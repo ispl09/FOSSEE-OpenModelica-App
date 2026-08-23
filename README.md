@@ -2,7 +2,7 @@
 
 ## Overview
 
-A desktop application developed using Python 3.6 or later and PyQt6 to run a compiled OpenModelica simulation of a two-connected-tank system.
+A desktop application developed using Python 3.6+ and PyQt6 to run a compiled OpenModelica simulation of a two-connected-tank system.
 
 The application provides a simple graphical interface for selecting the OpenModelica executable, entering simulation start and stop times, running the simulation, and viewing the simulation results.
 
@@ -64,7 +64,7 @@ FOSSEE_OpenModelica_App/
 
 ## Technologies
 
-- Python 3.6 or later
+- Python 3.6+
 - PyQt6
 - OpenModelica
 - Windows 10/11
