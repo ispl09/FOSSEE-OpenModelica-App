@@ -1,12 +1,12 @@
-#FOSSEE OpenModelica Desktop Application
+# FOSSEE OpenModelica Desktop Application
 
-Overview
+## Overview
 
-A desktop application developed using Python 3.6+ and PyQt6 to run a compiled OpenModelica simulation of a two-connected-tank system.
+A desktop application is developed using Python 3.6+ and PyQt6 to run a compiled OpenModelica simulation of a two-connected-tank system.
 
 The application provides a simple graphical interface for selecting the OpenModelica executable, entering simulation start and stop times, running the simulation, and viewing the simulation results.
 
-Features
+## Features
 
 - PyQt6-based desktop GUI
 
@@ -18,7 +18,7 @@ Features
 
 - Validation of the required condition:
   
-  "0 <= Start Time < Stop Time < 5"
+  **"0 <= Start Time < Stop Time < 5"**
 
 - OpenModelica simulation execution using runtime flags
 
@@ -30,8 +30,9 @@ Features
 
 - Self-contained OpenModelica runtime dependencies
 
-Project Structure
+## Project Structure
 
+```text
 FOSSEE_OpenModelica_App/
 │
 ├── app/
@@ -59,115 +60,117 @@ FOSSEE_OpenModelica_App/
 |
 ├── requirements.txt
 └── README.md
+```
 
-Technologies
+## Technologies
 
 - Python 3.6+
 - PyQt6
 - OpenModelica
 - Windows 10/11
 
-Installation
+## Installation
 
-1. Install Python
+### 1. Install Python
 
-Install Python 3.6 or later.
+  Install Python 3.6 or later.
 
-2. Install dependencies
+### 2. Install dependencies
 
 Open a terminal in the project directory and run:
 
-pip install -r requirements.txt
+    pip install -r requirements.txt
 
 Running the Application
 
 From the project root directory, run:
 
-python app/main.py
+    python ./app/main.py
 
 The application window will open.
 
-Step 1: Select the executable
+- Step 1: Select the executable
 
-Click Browse and select:
+    Click Browse and select:
 
-NonInteractingTanks/TwoConnectedTanks.exe
+    ***NonInteractingTanks/TwoConnectedTanks.exe***
 
-Step 2: Enter simulation times
+- Step 2: Enter simulation times
 
-Enter integer values for:
+    Enter integer values for:
 
-- Start Time
-- Stop Time
+      Start Time
+      Stop Time
 
-The following condition must be satisfied:
+    The following condition must be satisfied:
 
-0 <= Start Time < Stop Time < 5
+      0 <= Start Time < Stop Time < 5
 
-For example:
+    For example:
 
-Start Time: 0
-Stop Time: 1
+      Start Time: 0
+      Stop Time: 1
 
-Step 3: Run the simulation
+- Step 3: Run the simulation
 
-Click Run Simulation.
+    Click Run Simulation.
 
-The application passes the simulation parameters to the OpenModelica executable using the runtime override flag:
+    The application passes the simulation parameters to the OpenModelica executable using the runtime override flag:
 
--override=startTime=<start>,stopTime=<stop>
+    `-override=startTime=<start>, stopTime=<stop>`
 
-Step 4: View results
+- Step 4: View results
 
-After a successful simulation, click Show Results to display the simulation results.
+    After a successful simulation, click Show Results to display the simulation results.
 
-OpenModelica Model
+## OpenModelica Model
 
 The application uses the compiled "TwoConnectedTanks" OpenModelica model.
 
 The executable and its required model/runtime files are included in the repository so that the application can execute the simulation without depending on the developer's local OpenModelica installation path.
 
-Error Handling
+## Error Handling
 
 The application checks for:
 
-- Missing executable
-- Missing simulation result file
-- Empty simulation parameters
-- Non-integer input
-- Invalid simulation time range
-- Simulation execution failure
+  - Missing executable
+  - Missing simulation result file
+  - Empty simulation parameters
+  - Non-integer input
+  - Invalid simulation time range
+  - Simulation execution failure
 
-Appropriate error messages are displayed through the GUI.
+  Appropriate error messages are displayed through the GUI.
 
-Simulation Parameters
+## Simulation Parameters
 
 The application accepts integer start and stop times subject to:
 
-0 <= Start Time < Stop Time < 5
+***0 <= Start Time < Stop Time < 5***
 
 Examples:
 
-Start Time| Stop Time| Result
-0| 1| Valid
-1| 4| Valid
-0| 4| Valid
-2| 2| Invalid
-3| 1| Invalid
-0| 5| Invalid
--1| 2| Invalid
-0.5| 2| Invalid
+| Start Time | Stop Time | Result  |
+|------------|-----------|---------|
+| 0          | 1         | Valid   |
+| 1          | 4         | Valid   |
+| 0          | 4         | Valid   |
+| 2          | 2         | Invalid |
+| 3          | 1         | Invalid |
+| 0          | 5         | Invalid |
+| -1         | 2         | Invalid |
+| 0.5        | 2         | Invalid |
 
-Purpose
+## Purpose
 
 This project was developed as a screening task demonstrating:
 
-- Desktop GUI development with PyQt6
-- Python programming and object-oriented design
-- Integration of Python with an external simulation executable
-- OpenModelica simulation execution
-- Command-line argument handling
-- Runtime dependency management
-- Input validation
-- Simulation result visualization
-- User-oriented error handling
+  - Desktop GUI development with PyQt6
+  - Python programming and object-oriented design
+  - Integration of Python with an external simulation executable
+  - OpenModelica simulation execution
+  - Command-line argument handling
+  - Runtime dependency management
+  - Input validation
+  - Simulation result visualization
+  - User-oriented error handling
