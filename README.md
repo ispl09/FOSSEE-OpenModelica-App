@@ -2,7 +2,7 @@
 
 ## Overview
 
-A desktop application is developed using Python 3.6+ and PyQt6 to run a compiled OpenModelica simulation of a two-connected-tank system.
+A desktop application developed using Python 3.6 or later and PyQt6 to run a compiled OpenModelica simulation of a two-connected-tank system.
 
 The application provides a simple graphical interface for selecting the OpenModelica executable, entering simulation start and stop times, running the simulation, and viewing the simulation results.
 
@@ -20,13 +20,13 @@ The application provides a simple graphical interface for selecting the OpenMode
   
   **"0 <= Start Time < Stop Time < 5"**
 
-- OpenModelica simulation execution using runtime flags
+- OpenModelica simulation execution using runtime overrise flags
 
 - Simulation status and error messages
 
 - Simulation result visualization
 
-- Two-connected-tank visualization
+- Two-connected-tank system visualization
 
 - Self-contained OpenModelica runtime dependencies
 
@@ -64,7 +64,7 @@ FOSSEE_OpenModelica_App/
 
 ## Technologies
 
-- Python 3.6+
+- Python 3.6 or later
 - PyQt6
 - OpenModelica
 - Windows 10/11
@@ -117,7 +117,7 @@ The application window will open.
 
     The application passes the simulation parameters to the OpenModelica executable using the runtime override flag:
 
-    `-override=startTime=<start>, stopTime=<stop>`
+    `-override=startTime=<start>,stopTime=<stop>`
 
 - Step 4: View results
 
